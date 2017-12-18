@@ -28,39 +28,20 @@ class SomeClass {
 
 Would not it be better if we used the full potential of [delegated properties](https://kotlinlang.org/docs/reference/delegated-properties.html) for that matter? Weak Delegate creates one for you. Compare the previous example to the usage of Weak Delegate:
 
----
-### Read only property
-
-```kotlin
-class SomeClass(data: Data) {
-    private val wr: Data? by weak(data)
-
-    fun bar() {
-        val sr = wr
-
-        if (sr != null) {
-            print(sr)
-        }
-    }
-}
-```
-
----
-### Read-write property
-
 ```kotlin
 class SomeClass {
-    private var wr: Data? by weakVar()
+    private val weakRef: Data? by weak(Data("Some Data"))
+    private var weakRefVar: Data? by weak()
 
-    fun foo(data: Data) {
-        wr = data
+    fun set(data: Data) {
+        weakRefVar = data
     }
 
     fun bar() {
-        val sr = wr
+        val strongRef = weakRef
 
-        if (sr != null) {
-            print(sr)
+        if (strongRef != null) {
+            print(strongRef)
         }
     }
 }

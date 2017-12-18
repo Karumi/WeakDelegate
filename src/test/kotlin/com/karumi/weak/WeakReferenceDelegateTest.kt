@@ -7,7 +7,7 @@ class WeakReferenceDelegateTest {
     private val strongReference = SomeClass("Strong reference")
     private val weakReference: SomeClass? by weak(strongReference)
     private val nullWeakReference: SomeClass? by weak(SomeClass("Null weak reference"))
-    private var weakVarReference: SomeClass? by weakVar()
+    private var weakVarReference: SomeClass? by weak()
 
     @Test
     fun `Weak reference delegate should return empty optional if reference is cleaned up`() {
