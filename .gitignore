@@ -1,0 +1,11 @@
+# Compiled class file
+
+# IntelliJ project files
+*.iml
+
+# Build and artifacts
+out
+build
+
+# Gradle
+.gradle
