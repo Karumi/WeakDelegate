@@ -51,7 +51,7 @@ No more references to `WeakReference`s or `get` methods. Internally, Weak Delega
 
 ## Installation
 
-Add the [jitpack](https://jitpack.io/) url and include the WeakDelegate dependency to your `build.gradle` configuration:
+Add the [jitpack](https://jitpack.io/) repository and include the WeakDelegate dependency to your `build.gradle` configuration:
 
 ```groovy
 repositories { 
@@ -61,6 +61,12 @@ dependencies {
       compile 'com.karumi.weak:WeakDelegate:1.0.0'
 }
 ```
+
+## References
+
+* [Understanding Weak References Blog](https://community.oracle.com/blogs/enicholas/2006/05/04/understanding-weak-references)
+* [Weak, Soft, and Phantom References in Java (and Why They Matter)](https://dzone.com/articles/weak-soft-and-phantom-references-in-java-and-why-they-matter)
+* [Java: difference between strong/soft/weak/phantom reference](https://stackoverflow.com/a/23519721/3959570)
 
 License
 -------
