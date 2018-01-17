@@ -1,4 +1,4 @@
-# Weak Delegate
+# Weak Delegate [![](https://jitpack.io/v/Karumi/WeakDelegate.svg)](https://jitpack.io/#Karumi/WeakDelegate)
 
 This project implements a Kotlin wrapper for the almighty (and sometimes scary) [weak references](https://docs.oracle.com/javase/7/docs/api/java/lang/ref/WeakReference.html) so that you can use them in a more friendly way.
 
