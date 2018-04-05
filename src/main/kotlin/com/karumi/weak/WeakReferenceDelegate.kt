@@ -7,7 +7,7 @@ fun <T> weak() = WeakReferenceDelegate<T>()
 fun <T> weak(value: T) = WeakReferenceDelegate(value)
 
 class WeakReferenceDelegate<T> {
-    private var weakReference: WeakReference<T>? = null
+    private var weakReference: WeakReference<T?>? = null
 
     constructor()
     constructor(value: T) {
@@ -15,7 +15,7 @@ class WeakReferenceDelegate<T> {
     }
 
     operator fun getValue(thisRef: Any, property: KProperty<*>): T? = weakReference?.get()
-    operator fun setValue(thisRef: Any, property: KProperty<*>, value: T) {
+    operator fun setValue(thisRef: Any, property: KProperty<*>, value: T?) {
         weakReference = WeakReference(value)
     }
 }
