@@ -9,3 +9,4 @@ build
 
 # Gradle
 .gradle
+local.properties
