@@ -58,7 +58,7 @@ repositories {
      maven { url "https://jitpack.io" }
 }
 dependencies {
-      implementation 'com.github.Karumi:WeakDelegate:1.0.0'
+      implementation 'com.github.Karumi:WeakDelegate:1.0.1'
 }
 ```
 
