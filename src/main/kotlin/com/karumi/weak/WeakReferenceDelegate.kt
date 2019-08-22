@@ -3,8 +3,9 @@ package com.karumi.weak
 import java.lang.ref.WeakReference
 import kotlin.reflect.KProperty
 
-fun <T> weak() = WeakReferenceDelegate<T>()
-fun <T> weak(value: T) = WeakReferenceDelegate(value)
+inline fun <reified T> weak() = WeakReferenceDelegate<T>()
+
+inline fun <reified T> weak(value: T) = WeakReferenceDelegate(value)
 
 class WeakReferenceDelegate<T> {
     private var weakReference: WeakReference<T>? = null
