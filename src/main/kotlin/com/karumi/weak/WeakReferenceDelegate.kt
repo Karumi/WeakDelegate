@@ -3,20 +3,13 @@ package com.karumi.weak
 import java.lang.ref.WeakReference
 import kotlin.reflect.KProperty
 
-inline fun <reified T> weak() = WeakReferenceDelegate<T>()
+inline fun <reified T> weak(value: T? = null) = WeakReferenceDelegate(value)
 
-inline fun <reified T> weak(value: T) = WeakReferenceDelegate(value)
+class WeakReferenceDelegate<T>(v: T? = null) {
+    private var weakReference: WeakReference<T?> = WeakReference(v)
 
-class WeakReferenceDelegate<T> {
-    private var weakReference: WeakReference<T>? = null
-
-    constructor()
-    constructor(value: T) {
-        weakReference = WeakReference(value)
-    }
-
-    operator fun getValue(thisRef: Any, property: KProperty<*>): T? = weakReference?.get()
-    operator fun setValue(thisRef: Any, property: KProperty<*>, value: T) {
+    operator fun getValue(thisRef: Any, property: KProperty<*>): T? = weakReference.get()
+    operator fun setValue(thisRef: Any, property: KProperty<*>, value: T?) {
         weakReference = WeakReference(value)
     }
 }
